@@ -1,0 +1,4 @@
+read_verilog top.sv
+synth
+sim -r waves.vcd -scope tb_blink -w
+write_rtlil formal.il

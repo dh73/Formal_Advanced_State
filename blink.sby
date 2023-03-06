@@ -1,0 +1,22 @@
+[tasks]
+bmc: mode bmc
+cover: mode cover
+
+[options]
+bmc: mode bmc
+cover: mode cover
+depth 10
+
+[engines]
+smtbmc boolector
+
+[script]
+read_rtlil formal.il
+read_verilog -sv fvtb.sv
+prep -top fvtb
+flatten
+
+[files]
+formal.il
+fvtb.sv
+
